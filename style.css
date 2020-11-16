@@ -1,11 +1,13 @@
 /* CSS files add styling rules to your content */
 
-body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+input:invalid {
+  border: 2px dashed red;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+  border: 2px solid black;
 }
