@@ -2,22 +2,22 @@
     to your site with Javascript */
 
 // prints "hi" in the browser's dev tools console
-const form = document.getElementsByTagName('form')[0];
-const email = document.getElementById('mail');
-const emailError = document.querySelector('#mail + span.error');
-const btn = document.querySelector('button');
+const form = document.getElementsByTagName("form")[0];
+const email = document.getElementById("mail");
+const emailError = document.querySelector("#mail + span.error");
+const btn = document.querySelector("button");
 
-email.addEventListener('input', function(e) {
+email.addEventListener("input", function(e) {
   if (email.validity.valid) {
-    emailError.innerHTML = '';
-    emailError.className = 'error';
+    emailError.innerHTML = "";
+    emailError.className = "error";
+    btn.removeAttribute("disabled");
   } else {
     showError();
   }
 });
 
-form.addEventListener('submit', function(e) {
-  
+form.addEventListener("submit", function(e) {
   if (!email.validity.valid) {
     showError();
     e.preventDefault(e);
@@ -30,9 +30,8 @@ function showError() {
   } else if (email.validity.typeMismatch) {
     emailError.textContent = "Entered value needs to be an e-mail address.";
   } else if (email.validity.tooShort) {
-    emailError.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
   }
-  
-  emailError.className = 'error active';
-  btn.addAttribute('disabled', true);
+
+  emailError.className = "error active";
 }
