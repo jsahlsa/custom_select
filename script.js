@@ -2,13 +2,22 @@
     to your site with Javascript */
 
 // prints "hi" in the browser's dev tools console
-console.log("hi");
-const email = document.getElementById("mail");
+const form = document.getElementsByTagName('form')[0];
+const email = document.getElementById('mail');
+const emailError = document.querySelector('#mail + span.error');
 
-email.addEventListener("input", function(e) {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("I am expecting an email address!");
+email.addEventListener('input', function(e) {
+  if (email.validity.valid) {
+    emailError.innerHTML = '';
+    emailError.className = 'error';
   } else {
-    email.setCustomValidity("");
+    showError();
   }
 });
+
+form.addEventListener('submit', function(e) {
+  
+  if (!email.validity.valid) {
+    show
+  }
+})
