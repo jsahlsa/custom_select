@@ -3,3 +3,12 @@
 
 // prints "hi" in the browser's dev tools console
 console.log("hi");
+const email = document.getElementById("mail");
+
+email.addEventListener("input", function(e) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I am expecting an email address!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
