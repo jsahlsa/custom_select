@@ -9,3 +9,19 @@ body {
 * {
   box-sizing: border-box;
 }
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 2em;
+}
+
+input {
+  position: relative;
+}
+
+input:invalid {
+  box-shadow: red 0 0 5px;
+}
