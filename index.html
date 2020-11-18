@@ -14,16 +14,29 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <form novalidate>
-      <p>
-        <label for="mail">
-          <span>Please enter an email address:</span>
-          <input type="email" id="mail" name="mail" required minlength="8" />
-          <span class="error" aria-live="polite"></span>
-        </label>
-      </p>
-      <button disabled>Submit</button>
+    <form>
+      <h2>Enter your support query</h2>
+      <ul>
+        <li>
+          <label for="uname">User name:</label>
+          <input type="text" name="uname" id="uname" required />
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input type="text" name="email" id="email" required />
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="text" name="phone" id="phone" required />
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" required > </textarea>
+        </li>
+        <li>
+          <button>Submit comment</button>
+        </li>
+      </ul>
     </form>
-    <script src="https://button.glitch.me/button.js" defer></script>
   </body>
 </html>
