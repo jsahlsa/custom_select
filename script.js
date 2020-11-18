@@ -4,7 +4,7 @@
 // prints "hi" in the browser's dev tools console
 const form = document.querySelector('form');
 const email = document.getElementById('email');
-const emailError = document.querySelector('#email + span.error');
+const emailError = document.querySelector('#email + span');
 
 email.addEventListener('input', function(e) {
   if (email.validity.valid) {
@@ -27,6 +27,10 @@ function showError() {
     emailError.textContent = `Please enter an email address.`;
   } else if (email.validity.typeMismatch) {
     emailError.textContent = 'You need to enter a valid email';
-  } else if ()
+  } else if (email.validity.tooShort) {
+    emailError.textContent = `Email should be at least ${ email.minLength } characters, you entered ${ email.value.length }`;
+  }
+  
+  emailError.className = 'error active';
 }
 
