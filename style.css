@@ -33,3 +33,9 @@ input:required + span::after {
 input:invalid {
   box-shadow: red 0 0 5px;
 }
+
+.error.active {
+  background: red;
+  color: yellow;
+  padding: 5px;
+}

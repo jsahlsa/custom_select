@@ -28,7 +28,7 @@ function showError() {
   } else if (email.validity.typeMismatch) {
     emailError.textContent = 'You need to enter a valid email';
   } else if (email.validity.tooShort) {
-    emailError.textContent = `Email should be at least ${ email.minLength } characters, you entered ${ email.value.length }`;
+    emailError.textContent = `Email should be at least ${ email.minLength } characters, you entered ${ email.value.length }.`;
   }
   
   emailError.className = 'error active';
