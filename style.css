@@ -18,8 +18,16 @@ li {
   line-height: 2em;
 }
 
-input {
+input + span {
   position: relative;
+}
+
+input:required + span::after {
+  content: "Required";
+  font-size: .7em;
+  color: white;
+  background: #333;
+  padding: .3em;
 }
 
 input:invalid {

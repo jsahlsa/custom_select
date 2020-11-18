@@ -19,19 +19,29 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname" minlength="5" maxlength="20" required />
+          <input
+            type="text"
+            name="uname"
+            id="uname"
+            minlength="5"
+            maxlength="20"
+            required
+          />
+          <span></span>
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="email" name="email" id="email" required />
+          <input type="email" name="email" id="email" pattern:  required />
+          <span></span>
         </li>
         <li>
           <label for="phone">Phone number:</label>
           <input type="tel" name="phone" id="phone" maxlength="15" required />
+          <span></span>
         </li>
         <li>
           <label for="comment">Comment:</label>
-          <textarea name="comment" id="comment" maxlength="200"  > </textarea>
+          <textarea name="comment" id="comment" maxlength="200"> </textarea>
         </li>
         <li>
           <button>Submit comment</button>
