@@ -4,4 +4,6 @@
 // prints "hi" in the browser's dev tools console
 const email = document.getElementById('email');
 
-console.log(email.value);
+email.addEventListener('input', function(e) {
+  
+})
