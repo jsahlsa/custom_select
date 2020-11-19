@@ -7,4 +7,8 @@ window.addEventListener('load', function() {
   
   form.classList.remove('no-widget');
   form.classList.add('widget');
-})
+});
+
+NodeList.prototype.forEach = function (callback) {
+  Array.prototype.forEach.call(this, callback);
+}
