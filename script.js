@@ -12,3 +12,11 @@ window.addEventListener('load', function() {
 NodeList.prototype.forEach = function (callback) {
   Array.prototype.forEach.call(this, callback);
 }
+
+function deactivateSelect(select) {
+  if (!select.classList.contains('active')) return;
+  
+  let optList = select.querySelector('.optList');
+  
+  optList.classList.add
+}
