@@ -37,7 +37,7 @@ function toggleOptList(select) {
 }
 
 function highlightOption(select, option) {
-  let optionList = select.querySelector('.option');
+  let optionList = select.querySelectorAll('.option');
   
   optionList.forEach(function(other) {
     other.classList.remove('highlight');
@@ -50,6 +50,26 @@ window.addEventListener('load', function() {
   let selectList = document.querySelectorAll('.select');
   
   selectList.forEach(function(select) {
-    let optionList = 
-  })
-})
+    let optionList = select.querySelectorAll('.option');
+    
+    optionList.forEach(function(option) {
+      option.addEventListener('mouseover', function() {
+        highlightOption(select, option);
+      });
+    });
+    select.addEventListener('click', function(e) {
+      toggleOptList(select);
+    });
+    select.addEventListener('focus', function(e) {
+      activeSelect(select, selectList);
+    });
+    select.addEventListener('blur', function(e) {
+      deactivateSelect(select);
+    });
+    select.addEventListener('keyup', function(e) {
+      if (e.keyCode === 27) {
+        deactivateSelect(select);
+      }
+    });
+  });
+});
