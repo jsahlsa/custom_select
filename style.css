@@ -1,42 +1,18 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-  padding: 1em;
-  margin: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  line-height: 2em;
-}
-
-input + span {
+.select {
+  /* This will create a positioning context for the list of options;
+     adding this to .select:focus-within will be a better option when fully supported
+  */
   position: relative;
+ 
+  /* This will make our control become part of the text flow and sizable at the same time */
+  display : inline-block;
 }
 
-input:required + span::after {
-  content: "Required";
-  font-size: .7em;
-  color: white;
-  background: #333;
-  padding: .3em;
-}
-
-input:invalid {
-  box-shadow: red 0 0 5px;
-}
-
-.error.active {
-  background: red;
-  color: yellow;
-  padding: 5px;
-  font-size: .7em;
+.select .active,
+.select:focus {
+  outline: none;
+ 
+  /* This box-shadow property is not exactly required, however it's imperative to ensure
+     active state is visible, especially to keyboard users, that we use it as a default value. */
+  box-shadow: 0 0 3px 1px #227755;
 }
