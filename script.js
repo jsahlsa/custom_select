@@ -32,5 +32,6 @@ function showError() {
   }
   
   emailError.className = 'error active';
+  email.removeAttribute("required", '');
 }
 

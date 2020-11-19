@@ -38,4 +38,5 @@ input:invalid {
   background: red;
   color: yellow;
   padding: 5px;
+  font-size: .7em;
 }
