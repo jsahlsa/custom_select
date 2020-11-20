@@ -73,3 +73,32 @@ window.addEventListener('load', function() {
     });
   });
 });
+
+function updateValue(select, index) {
+  let nativeWidget = select.previousElementSibling;
+  
+  let value = select.querySelector('.value');
+  
+  let optionList = select.querySelectorAll('.option');
+  
+  nativeWidget.selectedIndex = index;
+  
+  value.innerHTML = optionList[index].innerHTML;
+  
+  highlightOption(select, optionList[index]);
+};
+
+function getIndex(select) {
+  let nativeWidget = select.previousElementSibling;
+  
+  return nativeWidget.selectedIndex;
+};
+
+window.addEventListener('load', function() {
+  let selectList = document.querySelectorAll('.option');
+  
+  selectList.forEach(function(select) {
+    let optionList = select.querySelectorAll('option'),
+        selectedIndex = getIndex(s)
+  })
+})
