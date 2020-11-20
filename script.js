@@ -99,6 +99,17 @@ window.addEventListener('load', function() {
   
   selectList.forEach(function(select) {
     let optionList = select.querySelectorAll('option'),
-        selectedIndex = getIndex(s)
-  })
-})
+        selectedIndex = getIndex(select);
+    
+    select.tabIndex = 0;
+    
+    select.previousElementSibling.tabIndex = -1;
+    
+    updateValue(select, selectedIndex);
+    
+    optionList.forEach(function(option, index) {
+      option.addEventListener('click', function(e))
+    })
+  });
+});
+
